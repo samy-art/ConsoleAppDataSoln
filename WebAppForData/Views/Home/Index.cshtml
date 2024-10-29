@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DataLibraryEF.Employee>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>EID</th>
+            <th>Name</th>
+            <th>Dept</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <th>@emp.Eid</th>
+                <th>@emp.EName</th>
+                <th>@emp.Dept</th>
+                <th>@Html.ActionLink("X", "RemoveEmployee",new {id=emp.Eid}) </th>
+                <th>@Html.ActionLink("Edit", "EditEmployee",new {id=emp.Eid}) </th>
+                
+            </tr>
+        }
+
+    </tbody>
+</table>

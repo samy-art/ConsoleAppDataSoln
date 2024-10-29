@@ -1,0 +1,16 @@
+﻿@model DataLibraryEF.Employee
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>Add An Employee</h2>
+
+
+@using (Html.BeginForm())
+{
+    <p>Enter the ID : @Html.TextBoxFor(emp=>emp.Eid)</p>
+    <p>Enter the Name : @Html.TextBoxFor(emp=>emp.EName)</p>
+    <p>Enter the Dept : @Html.TextBoxFor(emp=>emp.Dept)</p>
+
+    <input type="submit" value="Add Employee"/>
+}
